@@ -1,0 +1,48 @@
+https://github.com/asepmuhidin/basisdata
+
+- Create database dbApp;
+- use dbApp;
+- Buat tabel mahasiswa
+  CREATE TABLE mahasiswa(
+     nim varchar(9),
+     nama varchar(30),
+     email varchar(30),
+     telp varchar(30),
+     alamat varchar(120)
+  );
+- Melihat struktur table yang telah dibuat
+  desc mahasiswa;
+- Hapus tabel mahasiswa
+  DROP TABLE mahasiswa;
+- Buat lagi tabel mahasiswa dengan PK
+	CREATE TABLE mahasiswa(
+	     nim varchar(9) PRIMARY KEY,
+	     nama varchar(30),
+	     email varchar(30),
+	     telp varchar(30),
+	     alamat varchar(120)
+	  );
+- Melihat daftar tabel pada database
+  SHOW tables;
+-Buat table jurusan
+  create table jurusan(
+   kdjur varchar(2) primary key,
+   nama_jur varchar(20)
+  );
+- Melihat daftar tabel pada database
+  SHOW tables;
+
+- merubah nama tabel jurusan menjadi tblJurusan
+  RENAME TABLE jurusan TO tblJurusan;
+- Tambahkan field kdjur pada tabel mahasiswa;
+  ALTER TABLE mahasiswa add kdjur varchar(2);
+- Tambahkan field ket pada tabel tblJurusan;
+  ALTER TABLE tblJurusan add ket varchar(50);
+- Hapus field ket pada tabel tblJurusan;
+  ALTER TABLE tblJurusan drop ket;
+ 
+
+
+
+
+
