@@ -1,0 +1,56 @@
+1.Insert data jurusan pada tabel tblJurusan
+  INSERT INTO tblJurusan VALUES('J1','Teknik Informatika');
+  INSERT INTO tblJurusan VALUES('J2','Sistem Informasi');
+  INSERT INTO tblJurusan VALUES('J3','Komputer Grafik');
+
+2.Tampilakan seluruh data tblJurusan
+  SELECT * FROM tblJurusan; 
+
+3.Tampilkan data kolom nama_jur pada tabel jurusan
+  SELECT nama_jur from tblJurusan;
+4.Insert data mahasiswa
+  INSERT INTO mahasiswa VALUES 
+  ('311610610','Jaki','jax@gmail.com','08132222','Bekasi','J1');
+
+  INSERT INTO mahasiswa VALUES 
+  ('311610611','Maemunah','mun@gmail.com','08131111','Bogor','J1');
+
+  INSERT INTO mahasiswa VALUES 
+  ('311610612','Ayu ting-ting','ayu@gmail.com','0813555','Bekasi','J2');
+
+  INSERT INTO mahasiswa VALUES 
+  ('311610613','Muhammad','muh@gmail.com','08131222','Bogor','J2');
+
+  INSERT INTO mahasiswa VALUES 
+  ('311610614','Taylor Swift','atylor@gmail.com','08135000','Bekasi','J3');
+
+5.Tampilakan seluruh data mahasiswa
+  SELECT * FROM mahasiswa; 
+
+6.Tampilkan nama mahasiswa dan email
+  SELECT nama,email from mahasiswa; 
+
+7.Tampilkan seluruh data dari tabel mahasiswa yang alamatnya bekasi
+  SELECT * FROM mahasiswa WHERE alamat='Bekasi'
+
+
+8.Tampilkan seluruh data dari tabel mahasiswa yang alamatnya bogor
+9.Tampilkan seluruh data dari tabel mahasiswa yang jurusannya Teknik Informatika
+
+10.Rubah data email taylor swift
+   UPDATE mahasiswa SET email='taylor@gmail.com' WHERE nim='311610614';
+
+11.Rubah data alamat dan jurusan jaki, menjadi alamatnya di Jakarta dan pindah 
+   jurusan ke Komputer Grafik
+   
+   UPDATE mahasiswa 
+   SET alamat='Jakarata',
+       kdjur='J3' 
+   WHERE nim='311610610';
+
+12.Hapus Data mahasiswa maemunah
+   DELETE FROM mahasiswa WHERE nim='311610611'
+  
+
+
+
