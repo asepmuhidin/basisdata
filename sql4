@@ -1,0 +1,26 @@
+1.Tampilkan seluruh mahasiswa dengan awalan a
+  select nama,email from mahasiswa where nama like 'a%';
+2.Urutkan data berdasarkan data nama secara Ascending
+  select nama,email from mahasiswa order by nama desc
+3.Menghitung jumlah record/baris
+  select count(*)AS 'Jum.Mhs' from mahasiswa; 
+4.Tentukan jumlah mahasiswa dengan awalan nama hurup 'a'
+  select count(*) as 'Jumlah' from mahasiswa where nama like 'a%'; 
+5.Daerah manakah tempat tinggal mahasiswa dikelas ini
+  select alamat from mahasiswa group by alamat;
+6.Tentukan jumlah mahasiswa berdasarkan alamat
+  select alamat as 'Daerah',count(alamat)as 'Jml' from mahasiswa
+  group by alamat; 
+7.Tampilkan data mahasiswa dengan nama 10 hurup dari depn
+  select left(nama,10)AS 'Nama', email,alamat from mahasiswa; 
+8.Tampilkan nama depan mahasiswa
+  select left(nama,instr(nama,' ')-1) as 'Nama Depan' from mahasiswa;
+
+  select left(nama,instr(nama,' ')-1) as 'Nama Depan' 
+  from mahasiswa
+  where left(nama,instr(nama,' ')-1)<>' ';
+9.Tampilkan nama depan dan belakang mahasiswa
+  select left(nama,instr(nama,' ')-1) as 'Nama Depan',
+  mid(nama,instr(nama,' ')+1) as 'Nama Belakang'
+  from mahasiswa
+  where left(nama,instr(nama,' ')-1)<>' ';
