@@ -1,0 +1,23 @@
+select max(maxYear)AS x FROM(
+  select max(year(from_date))AS maxYear 
+  from salaries group by year(from_date)
+)thn;
+
+select max(salary)AS MaxSalary,min(salary)AS MinSalary,AVG(salary)AS AvgSalary 
+from salaries
+where year(from_date)=2002
+
+
+
+select sl.emp_no,e.first_name,salary 
+from salaries sl INNER JOIN employees e ON sl.emp_no=e.emp_no
+where salary=( select max(salary)AS MaxSalary 
+               from salaries where year(from_date)=2002
+             )
+AND year(from_date)=2002
+
+select e.emp_no,first_name,salary,month(from_date)as bulan,year(from_date)as tahun
+from employees e LEFT JOIN salaries s ON e.emp_no=s.emp_no
+where year(from_date)=2000 AND month(from_date)=12
+
+
