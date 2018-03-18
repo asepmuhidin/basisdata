@@ -1,0 +1,24 @@
+1.Tampilkan jumlah total gaji per-tahun (ambil dari kolom from_date)
+  select year(from_date) as tahun 
+  from salaries
+  group by year(from_date);
+
+  select year(from_date) as tahun,sum(salary) as SumOfSalary,avg(salary)as AvgOfSalary 
+  from salaries
+  group by year(from_date);
+
+2.Tampilkan data departemen beserta nama manager nya
+ 
+ select dept_name as departemen,first_name
+  from dept_manager dm inner join departments d on dm.dept_no=d.dept_no
+  inner join employees e on dm.emp_no=e.emp_no 
+  group by d.dept_name,first_name;
+
+3.Tampilkan jumlah karyawan tiap departemen
+  select dept_name,count(de.emp_no) as CountOfEmployee
+  from dept_emp de inner join departments d on de.dept_no=d.dept_no
+  inner join employees e on de.emp_no=e.emp_no
+  group by dept_name;
+
+
+from dept_name inner join departments d on de_dept_no=d.dept_no;
