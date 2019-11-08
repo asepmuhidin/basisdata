@@ -1,0 +1,23 @@
+# Tugas Praktikum 
+### Setiap perintah di print screen, 
+
+1) Buat Table produk, dengan kolom sbb:
+   kprod varchar(5),nmprod varchar(30),unit varchar(5),harga int
+2) Tambahkan kolom ke tabel tersebut dengan nama kolom kategori type data varchar(2) 
+3) Rubah kolom kdprod menjadi primary key (pk)
+
+4) Insert data :
+kdprod   nmprod    unit    harga     kategori
+B001     Buku      pcs     2500      ATK  
+B002     Pencil    pcs     1500      ATK
+B003     Terigu    kg      5500      Sembako
+B004     Tas       pcs     120000    Peralatan
+B005     GreenTea  Botol   3000      Minuman
+
+5) Update harga buku menjadi 1500
+6) Update semua kategori ATK menjadi Alat Tulis
+7) Hapus produk GreenTea
+8) Hapus produk dengan harga diatas 5000
+9) Hapus produk dengan kategori Alat Tulis
+               
+ 	
