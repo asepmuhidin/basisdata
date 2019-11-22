@@ -1,0 +1,28 @@
+select tbA.col1,tbA.Col2,tbB.col1..
+FROM tbA INNER JOIN tbB 
+ON tbA.PK=tbB.FG
+
+select orders.orderNumber,orders.OrderDate,
+orderDetails.productCode,orderDetails.quantityOrdered,orderDetails.priceEach,
+orderDetails.quantityOrdered*orderDetails.priceEach as SubTotal
+from orders inner join orderdetails 
+on orders.orderNumber=orderdetails.orderNumber
+where orders.orderNumber='10100';
+
+##Boleh dengan nama kolom/field langsung dengan syarat kolom
+##tersebut tidak ada di kedua/lain table
+
+select orders.orderNumber,OrderDate,
+productCode,quantityOrdered,priceEach,
+quantityOrdered*priceEach as SubTotal
+from orders inner join orderdetails 
+on orders.orderNumber=orderdetails.orderNumber
+where orders.orderNumber='10100';
+
+##Menggunakan nama alias
+select o.orderNumber,OrderDate,
+productCode,quantityOrdered,priceEach,
+quantityOrdered*priceEach as SubTotal
+from orders o inner join orderdetails d 
+on o.orderNumber=d.orderNumber
+where o.orderNumber='10100';
