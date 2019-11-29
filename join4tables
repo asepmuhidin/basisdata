@@ -1,0 +1,6 @@
+select customerName,o.orderNumber,orderDate,d.productCode,productName,
+quantityOrdered,priceEach,quantityOrdered*priceEach as SubTotal
+from orders o inner join orderdetails d on o.orderNumber=d.orderNumber
+inner join products p on d.productCode=p.productCode
+inner join customers c on o.customerNumber=c.customerNumber
+where o.orderNumber=10107
