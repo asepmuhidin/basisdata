@@ -1,0 +1,23 @@
+1. Buat Laporan Sales Order Register, dengan kolom sbb :
+   CustomerName,	OrderDate,	OrderNumber,	RequireDate,	ShippedDate,	Status
+
+    select CustomerName,OrderDate,OrderNumber,RequiredDate,ShippedDate,Status
+    from customers c inner join orders o on c.customerNumber=o.customerNumber
+    order by orderDate
+
+2. Buat Laporan Sales Order Customer, dengan kolom sbb :
+   CustomerName,	OrderDate,	OrderNumber,	AmoutOrder
+   
+    select CustomerName,OrderDate,o.OrderNumber,sum(priceEach*quantityOrdered)AS AmoutOrder
+    from customers c inner join orders o on c.customerNumber=o.customerNumber
+    inner join orderdetails d on o.orderNumber=d.orderNumber
+    group by CustomerName,OrderDate,o.OrderNumber
+    order by orderDate
+
+3. Buat Laporan Inventory Items, dengan kolom sbb :
+   productCode,	productName,	quantityInStock,	QtyOrder,	QOH
+   
+   select p.productCode,productName,quantityInStock,
+   SUM(QuantityOrdered)as QtyOrder,SUM(QuantityOrdered)-quantityInStock as QOH
+   from products p inner join orderdetails d on p.productCode=d.productCode
+   group by p.productCode,productName,quantityInStock
