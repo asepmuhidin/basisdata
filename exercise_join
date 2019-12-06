@@ -18,6 +18,6 @@
    productCode,	productName,	quantityInStock,	QtyOrder,	QOH
    
    select p.productCode,productName,quantityInStock,
-   SUM(QuantityOrdered)as QtyOrder,SUM(QuantityOrdered)-quantityInStock as QOH
+   SUM(QuantityOrdered)as QtyOrder,quantityInStock-SUM(QuantityOrdered) AS QOH
    from products p inner join orderdetails d on p.productCode=d.productCode
    group by p.productCode,productName,quantityInStock
