@@ -1,0 +1,26 @@
+select customerName as Custname,o.orderNumber as OrderNo,OrderDate,
+od.ProductCode as ProdID,productname as Prodname,
+quantityOrdered as QtyOrder, priceEach as Price, 
+quantityOrdered*priceEach as SubTotal
+
+from customers c 
+inner join orders o on c.customerNumber=o.customerNumber
+inner join orderdetails od on o.orderNumber=od.orderNumber
+inner join products p on od.productCode=p.productCode
+
+
+select customerName as Custname,o.orderNumber as OrderNo,
+year(OrderDate)as tahun,
+sum(quantityOrdered*priceEach) as amountoforder
+from customers c 
+inner join orders o on c.customerNumber=o.customerNumber
+inner join orderdetails od on o.orderNumber=od.orderNumber
+group by customerName,o.orderNumber,orderDate 
+
+select customerName as Custname,
+sum(quantityOrdered*priceEach) as amountoforder
+from customers c 
+inner join orders o on c.customerNumber=o.customerNumber
+inner join orderdetails od on o.orderNumber=od.orderNumber
+group by customerName 
+
