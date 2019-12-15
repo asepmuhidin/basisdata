@@ -1,0 +1,97 @@
+1. buat database : dbd7
+   create database dbd7;
+2. Aktifkan database dbd7
+   use dbd7;
+3. Buat tabel mahasiswa;
+   create table mahasiswa(
+      nim varchar(10) primary key,
+      nama varchar(30) not null,
+      fak varchar(30),
+      prodi varchar(30),
+      email varchar(30),
+      telp varchar(15),
+      umur int 
+   );
+4. insert data mahasiswa
+   insert into mahasiswa
+   values('N001','Aldi','FT','TI','aldi@gmail.com','08139899',23);
+   insert into mahasiswa
+   values('N002','Helmi','FT','TI','helmi@gmail.com','08139800',20);
+   insert into mahasiswa
+   values('N003','Dodi','FT','TI','dod@gmail.com','08130899',19);
+   insert into mahasiswa
+   values('N004','Farhan','FEBIS','EK','far@gmail.com','08138800',25);
+   insert into mahasiswa
+   values('N005','Rasmini','FEBIS','EK','ras@gmail.com','08138800',20);
+   insert into mahasiswa
+   values('N006','Nuke','FEBIS','EK','keke@gmail.com','08138800',20);
+   insert into mahasiswa
+   values('N007','Aziz','FT','TL','zis@gmail.com','08138811',26);
+   insert into mahasiswa
+   values('N008','Riska','FT','TL','ris@gmail.com','08138822',24);
+   insert into mahasiswa
+   values('N009','Ainun','FT','TL','ain@gmail.com','08138823',22);
+   insert into mahasiswa
+ values('N010','Yusep','FT','AR','yus@gmail.com','08138823',27);
+
+
+
+5. Tampilkan semua data mahasiswa
+   select * from mahasiswa;
+6. Tampilkan kolom nim,nama,prodi,email data mahasiswa
+   select nim,nama,prodi,email from mahasiswa;
+7. Tampilkan kolom NIM,Nama Mahasiswa,Program Studi,Email data mahasiswa
+   select nim AS NIM,nama AS 'Nama Mahasiswa',
+   prodi AS 'Program Studi',email AS Email from mahasiswa;
+
+8. Tampilkan semua data mahasiswa berurutan nama mahasiswa
+   select * from mahasiswa order by nama; 
+9. Tampilkan semua data mahasiswa prodi TI
+   select * 
+   from mahasiswa
+   where prodi='TI'  
+   order by nama;	
+10. Tampilkan semua data mahasiswa fakultas FT
+     select * 
+   from mahasiswa
+   where fak='FT'  
+   order by nama;
+11. Tampilkan semua data mahasiswa yang berumur diatas 22
+select* from mahasiswa
+where umur>22;
+    
+12. Tampilkan semua data mahasiswa fakultas FT dan yang berumur 
+    diatas 22
+     select*from mahasiswa where fak='FT' and umur>22 order by nama;
+13. Tampilkan semua data mahasiswa fakultas FEBIS dan yang berumur 
+    di bawah 20
+    select*from mahasiswa where fak='FEBIS' and umur<20 order by  
+    nama;
+14. Tampilkan nama fakultas dan jumlah mahasiswa tiap fakultas
+    select fak as Fakultas,count(nim) as jumlah_mahasiswa
+    from mahasiswa 
+    group by fak;
+15. Tampilkan nama fakultas dan jumlah mahasiswa tiap prodi
+    select prodi as 'Program Studi',count(nim) as jumlah_mahasiswa
+    from mahasiswa 
+    group by prodi;
+
+select fak as Fakultas,prodi as 'Program Studi',count(nim) as jumlah_mahasiswa
+    from mahasiswa 
+    group by prodi,fak;	
+
+select fak from mahasiswa group by fak;
+
+select fak,count(prodi)as jum_prodi 
+from (select fak,prodi 
+      from mahasiswa 
+      group by fak,prodi
+     )g 
+group by fak;
+
+
+
+
+
+
+
